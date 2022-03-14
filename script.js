@@ -1,4 +1,5 @@
 const addBtn = document.querySelector('.add-btn');
+const div = document.querySelector('.added-books');
 // const newBook = {};
 
 function Book(title, author) {
@@ -15,9 +16,21 @@ function addNewBook() {
   // localStorage.setItem('book', JSON.stringify(newBooks));
   // awesomeBooks = JSON.parse(newBooks);
   console.log(awesomeBooks);
+  const bookContainer = document.createElement('div');
+  bookContainer.classList.add('book');
+  bookContainer.innerHTML = `
+  <ul>
+    <li>${newBooks.title}</li>
+    <li>${newBooks.author}</li>
+  </ul>
+  <button class="remove-button" type="button">Remove</button>
+  `;
+  div.appendChild(bookContainer);
 }
 
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();
   addNewBook();
 });
+
+
