@@ -11,3 +11,15 @@
 .add-btn {
     width: fit-content;
 }
+
+ul {
+    padding-inline-start: 0;
+}
+
+.item {
+    list-style: none;
+}
+
+.remove-button {
+    margin: 0 0 10px;
+}
