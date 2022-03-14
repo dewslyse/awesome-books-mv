@@ -20,10 +20,11 @@ function addNewBook() {
   bookContainer.classList.add('book');
   bookContainer.innerHTML = `
   <ul>
-    <li>${newBooks.title}</li>
-    <li>${newBooks.author}</li>
+    <li class="item">${newBooks.title}</li>
+    <li class="item">${newBooks.author}</li>
   </ul>
   <button class="remove-button" type="button">Remove</button>
+  <hr>
   `;
   div.appendChild(bookContainer);
 }
