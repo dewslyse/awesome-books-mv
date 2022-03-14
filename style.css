@@ -1,0 +1,13 @@
+.input-section {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.pb {
+    margin-bottom: 15px;
+}
+
+.add-btn {
+    width: fit-content;
+}
