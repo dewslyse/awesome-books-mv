@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  width: 70%;
+  margin: 60px auto;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 12px;
+}
+
+h2 {
+  text-align: center;
+  color: black;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.added-books {
+  border: 2px solid black;
+}
+
+.book:nth-child(odd) {
+  background-color: #e0e0e2;
+}
+
+hr {
+  margin: 16px auto 0;
+  background-color: black;
+  height: 2px;
+  border: 0;
+  width: 100px;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 20px auto;
+}
+
+input {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+.pb {
+  margin-bottom: 15px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: end;
+}
+
+.add-btn {
+  width: fit-content;
+  align-content: flex-end;
+  border: 1px solid black;
+  padding: 4px 8px;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+.item {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.remove-button {
+  margin: 0 10px 0;
+  padding: 4px 8px;
+  border: 1px solid red;
+}
+
+.book-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
