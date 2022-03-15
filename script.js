@@ -6,27 +6,31 @@ function Book(title, author) {
   this.title = title;
   this.author = author;
 }
-let awesomeBooks = [];
+
+function display(book) {
+  const bookContainer = document.createElement('div');
+  // bookContainer.classList.add('book');
+  bookContainer.innerHTML = `
+    <ul>
+      <li class="item">${book.title}</li>
+      <li class="item">${book.author}</li>
+    </ul>
+    <button class="remove-button" type="button">Remove</button>
+    <hr>
+    `;
+  div.appendChild(bookContainer);
+}
+
+let library = [];
 function addNewBook() {
   const bookTitle = document.getElementById('title').value;
   const bookAuthor = document.getElementById('author').value;
   const newBooks = new Book(bookTitle, bookAuthor);
-  localStorage.setItem('book', JSON.stringify(newBooks));
-  awesomeBooks.push(newBooks);
-  // localStorage.setItem('book', JSON.stringify(newBooks));
-  // awesomeBooks = JSON.parse(newBooks);
-  console.log(awesomeBooks);
-  const bookContainer = document.createElement('div');
-  bookContainer.classList.add('book');
-  bookContainer.innerHTML = `
-  <ul>
-    <li class="item">${newBooks.title}</li>
-    <li class="item">${newBooks.author}</li>
-  </ul>
-  <button class="remove-button" type="button">Remove</button>
-  <hr>
-  `;
-  div.appendChild(bookContainer);
+  localStorage.setItem('newBooks', JSON.stringify(newBooks));
+  library = JSON.parse(localStorage.getItem('library') || '[]');
+  library.push(newBooks);
+  localStorage.setItem('library', JSON.stringify(library));
+  display(newBooks);
 }
 
 addBtn.addEventListener('click', (e) => {
@@ -34,4 +38,9 @@ addBtn.addEventListener('click', (e) => {
   addNewBook();
 });
 
-
+window.addEventListener('load', () => {
+  const storage = JSON.parse(localStorage.getItem('library'));
+  for (let j = 0; j < storage.length; j += 1) {
+    display(storage[j]);
+  }
+});
