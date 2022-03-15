@@ -1,18 +1,22 @@
+/* eslint-disable max-classes-per-file */
 const addBtn = document.querySelector('.add-btn');
 const div = document.querySelector('.added-books');
-const library = [];
+class Library {
+  static library = [];
 
-function save() {
-  localStorage.setItem('library', JSON.stringify(library));
+  static add(book) {
+    this.library.push(book);
+  }
+
+  static remove(id) {
+    Library.library.splice(id - 1, 1);
+    const bookToRemove = document.getElementById(`${id}`);
+    div.removeChild(bookToRemove);
+  }
 }
 
-function removeBook(id) {
-  const bookToRemove = document.getElementById(`${id}`);
-  div.removeChild(bookToRemove);
-  console.log(library);
-  library.splice(id - 1, 1);
-  console.log(library);
-  save();
+function save() {
+  localStorage.setItem('library', JSON.stringify(Library.library));
 }
 
 function display(book) {
@@ -20,33 +24,39 @@ function display(book) {
   bookContainer.classList.add('book');
   bookContainer.id = book.id;
   bookContainer.innerHTML = `
-      <ul>
-        <li class="item">${book.title}</li>
-        <li class="item">${book.author}</li>
-      </ul>
-      <button class="remove-button" type="button">Remove</button>
-      <hr>
-      `;
+      <div class="book-item">
+        <p class="item">"${book.title}" by ${book.author}</p>
+        <button class="remove-button" type="button">Remove</button>        
+      </div>
+    `;
   div.appendChild(bookContainer);
   bookContainer.addEventListener('click', () => {
-    removeBook(book.id);
+    Library.remove(book.id);
     save();
   });
 }
+class Book {
+  constructor(id, title, author) {
+    this.id = id;
+    this.title = title;
+    this.author = author;
+  }
 
-let book = {};
-let i = 0;
-function addNewBook(title, author) {
-  book = {
-    id: i += 1,
-    title,
-    author,
-  };
-  library.push(book);
-  display(book);
-  save();
+  addNewBook(title, author) {
+    this.title = title;
+    this.author = author;
+    Library.add(this);
+    display(this);
+    save();
+  }
+
+  removeBook() {
+    Library.remove(this);
+    save();
+  }
 }
 
+let i = 0;
 addBtn.addEventListener('click', (e) => {
   const bookTitle = document.getElementById('title').value;
   const bookAuthor = document.getElementById('author').value;
@@ -55,7 +65,8 @@ addBtn.addEventListener('click', (e) => {
   if (bookTitle === '' && bookAuthor === '') {
     alert('Book cannot be empty');
   } else {
-    addNewBook(bookTitle, bookAuthor);
+    const newBook = new Book(i += 1, bookTitle, bookAuthor);
+    newBook.addNewBook(newBook.title, newBook.author);
     save();
   }
   inputs.forEach((input) => {
@@ -67,8 +78,8 @@ window.addEventListener('load', () => {
   const storage = JSON.parse(localStorage.getItem('library'));
   if (storage) {
     for (let j = 0; j < storage.length; j += 1) {
-      addNewBook(storage[j].title, storage[j].author);
+      Library.add(storage[j]);
+      display(storage[j]);
     }
-    console.log(storage);
   }
 });
