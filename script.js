@@ -1,7 +1,6 @@
 const addBtn = document.querySelector('.add-btn');
 const div = document.querySelector('.added-books');
 const library = [];
-
 function save() {
   localStorage.setItem('library', JSON.stringify(library));
 }
@@ -33,20 +32,33 @@ function display(book) {
     save();
   });
 }
+class Book {
+  constructor(id, title, author) {
+    this.id = id;
+    this.title = title;
+    this.author = author;
+  }
 
-let book = {};
-let i = 0;
-function addNewBook(title, author) {
-  book = {
-    id: i += 1,
-    title,
-    author,
-  };
-  library.push(book);
-  display(book);
-  save();
+  addNewBook(newBook) {
+    library.push(newBook);
+    display(newBook);
+    save();
+  }
 }
 
+// let book = {};
+// let i = 0;
+// function addNewBook(title, author) {
+//   book = {
+//     id: i += 1,
+//     title,
+//     author,
+//   };
+//   library.push(book);
+//   display(book);
+//   save();
+// }
+let i = 0;
 addBtn.addEventListener('click', (e) => {
   const bookTitle = document.getElementById('title').value;
   const bookAuthor = document.getElementById('author').value;
@@ -55,7 +67,10 @@ addBtn.addEventListener('click', (e) => {
   if (bookTitle === '' && bookAuthor === '') {
     alert('Book cannot be empty');
   } else {
-    addNewBook(bookTitle, bookAuthor);
+    // addNewBook(bookTitle, bookAuthor);
+    const newBook = new Book(i += 1, bookTitle, bookAuthor);
+    console.log(newBook);
+    newBook.addNewBook(newBook);
     save();
   }
   inputs.forEach((input) => {
@@ -64,11 +79,11 @@ addBtn.addEventListener('click', (e) => {
 });
 
 window.addEventListener('load', () => {
-  const storage = JSON.parse(localStorage.getItem('library'));
-  if (storage) {
-    for (let j = 0; j < storage.length; j += 1) {
-      addNewBook(storage[j].title, storage[j].author);
-    }
-    console.log(storage);
-  }
+  // const storage = JSON.parse(localStorage.getItem('library'));
+  // if (storage) {
+  //   for (let j = 0; j < storage.length; j += 1) {
+  //     addNewBook(storage[j].title, storage[j].author);
+  //   }
+  //   console.log(storage);
+  // }
 });
