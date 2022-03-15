@@ -9,7 +9,9 @@ function save() {
 function removeBook(id) {
   const bookToRemove = document.getElementById(`${id}`);
   div.removeChild(bookToRemove);
-  library.splice(id, 1);
+  console.log(library);
+  library.splice(id - 1, 1);
+  console.log(library);
   save();
 }
 
@@ -33,9 +35,10 @@ function display(book) {
 }
 
 let book = {};
+let i = 0;
 function addNewBook(title, author) {
   book = {
-    id: String(library.length),
+    id: i += 1,
     title,
     author,
   };
@@ -50,7 +53,7 @@ addBtn.addEventListener('click', (e) => {
   const inputs = document.querySelectorAll('#title, #author');
   e.preventDefault();
   if (bookTitle === '' && bookAuthor === '') {
-    console.log('Book cannot be empty');
+    alert('Book cannot be empty');
   } else {
     addNewBook(bookTitle, bookAuthor);
     save();
@@ -64,7 +67,8 @@ window.addEventListener('load', () => {
   const storage = JSON.parse(localStorage.getItem('library'));
   if (storage) {
     for (let j = 0; j < storage.length; j += 1) {
-      display(storage[j]);
+      addNewBook(storage[j].title, storage[j].author);
     }
+    console.log(storage);
   }
 });
