@@ -24,13 +24,11 @@ function display(book) {
   bookContainer.classList.add('book');
   bookContainer.id = book.id;
   bookContainer.innerHTML = `
-      <ul>
-        <li class="item">${book.title}</li>
-        <li class="item">${book.author}</li>
-      </ul>
-      <button class="remove-button" type="button">Remove</button>
-      <hr>
-      `;
+      <div class="book-item">
+        <p class="item">"${book.title}" by ${book.author}</p>
+        <button class="remove-button" type="button">Remove</button>        
+      </div>
+    `;
   div.appendChild(bookContainer);
   bookContainer.addEventListener('click', () => {
     Library.remove(book.id);
@@ -80,7 +78,7 @@ window.addEventListener('load', () => {
   const storage = JSON.parse(localStorage.getItem('library'));
   if (storage) {
     for (let j = 0; j < storage.length; j += 1) {
-      Library.add(storage[i]);
+      Library.add(storage[j]);
       display(storage[j]);
     }
   }
