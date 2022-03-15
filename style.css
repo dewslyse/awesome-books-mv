@@ -1,25 +1,25 @@
 .input-section {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
 }
 
 .pb {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .add-btn {
-    width: fit-content;
+  width: fit-content;
 }
 
 ul {
-    padding-inline-start: 0;
+  padding-inline-start: 0;
 }
 
 .item {
-    list-style: none;
+  list-style: none;
 }
 
 .remove-button {
-    margin: 0 0 10px;
+  margin: 0 0 10px;
 }
