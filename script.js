@@ -1,6 +1,6 @@
 const addBtn = document.querySelector('.add-btn');
 const div = document.querySelector('.added-books');
-let library = [];
+const library = [];
 
 function save() {
   localStorage.setItem('library', JSON.stringify(library));
@@ -47,13 +47,17 @@ function addNewBook(title, author) {
 addBtn.addEventListener('click', (e) => {
   const bookTitle = document.getElementById('title').value;
   const bookAuthor = document.getElementById('author').value;
+  const inputs = document.querySelectorAll('#title, #author');
   e.preventDefault();
   if (bookTitle === '' && bookAuthor === '') {
-    console.log('none');
+    console.log('Book cannot be empty');
   } else {
     addNewBook(bookTitle, bookAuthor);
     save();
   }
+  inputs.forEach((input) => {
+    input.value = '';
+  });
 });
 
 window.addEventListener('load', () => {
