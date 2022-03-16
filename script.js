@@ -8,6 +8,7 @@ const addNewLink = document.querySelector('.add-new-link');
 const booksList = document.querySelector('.book-list');
 const newSection = document.querySelector('.add-new');
 const link = document.querySelectorAll('.link');
+const dateTime = document.getElementById('current-date');
 
 class Library {
   static library = [];
@@ -132,3 +133,9 @@ function activeLink() {
 }
 
 link.forEach((item) => item.addEventListener('click', activeLink));
+
+const currentDate = new Date();
+const date = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1)}-${currentDate.getDate()}`;
+const time = `${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
+const dateCurrentTime = `${date}, ${time}`;
+dateTime.innerHTML = dateCurrentTime;
