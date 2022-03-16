@@ -9,6 +9,7 @@ const booksList = document.querySelector('.book-list');
 const newSection = document.querySelector('.add-new');
 const link = document.querySelectorAll('.link');
 const dateTime = document.getElementById('current-date');
+let i = 0;
 
 class Library {
   static library = [];
@@ -21,6 +22,7 @@ class Library {
     Library.library.splice(id - 1, 1);
     const bookToRemove = document.getElementById(`${id}`);
     div.removeChild(bookToRemove);
+    i = 0;
   }
 }
 
@@ -39,10 +41,15 @@ function display(book) {
       </div>
     `;
   div.appendChild(bookContainer);
-  bookContainer.addEventListener('click', () => {
+  document.querySelectorAll('.remove-button').forEach((n) => n.addEventListener('click', () => {
     Library.remove(book.id);
     save();
-  });
+  }));
+
+  // book.addEventListener('click', () => {
+  //   Library.remove(book.id);
+  //   save();
+  // });
 }
 class Book {
   constructor(id, title, author) {
@@ -65,7 +72,6 @@ class Book {
   }
 }
 
-let i = 0;
 addBtn.addEventListener('click', (e) => {
   const bookTitle = document.getElementById('title').value;
   const bookAuthor = document.getElementById('author').value;
