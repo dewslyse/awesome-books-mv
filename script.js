@@ -1,6 +1,15 @@
 /* eslint-disable max-classes-per-file */
 const addBtn = document.querySelector('.add-btn');
 const div = document.querySelector('.added-books');
+const contact = document.querySelector('.contact');
+const contactLink = document.querySelector('.contact-link');
+const listLink = document.querySelector('.list-link');
+const addNewLink = document.querySelector('.add-new-link');
+const booksList = document.querySelector('.book-list');
+const newSection = document.querySelector('.add-new');
+const link = document.querySelectorAll('.link');
+const dateTime = document.getElementById('current-date');
+
 class Library {
   static library = [];
 
@@ -30,11 +39,12 @@ function display(book) {
       </div>
     `;
   div.appendChild(bookContainer);
-  bookContainer.addEventListener('click', () => {
+  document.querySelectorAll('.remove-button').forEach((n) => n.addEventListener('click', () => {
     Library.remove(book.id);
     save();
-  });
+  }));
 }
+
 class Book {
   constructor(id, title, author) {
     this.id = id;
@@ -57,6 +67,7 @@ class Book {
 }
 
 let i = 0;
+
 addBtn.addEventListener('click', (e) => {
   const bookTitle = document.getElementById('title').value;
   const bookAuthor = document.getElementById('author').value;
@@ -83,3 +94,50 @@ window.addEventListener('load', () => {
     }
   }
 });
+
+const contactDiv = document.createElement('div');
+contactDiv.classList.add('contact-container');
+contactDiv.innerHTML = `
+      <h2>Contact Information</h2>
+      <div class="contact-text">
+      <p>Do you have any questions or you just want to say 'Hello".</p>
+      <p>You can reach out to us!</p>
+      </div>
+      <ul class="contact-features">
+        <li>Our email: info@awesomebooks.com</li>
+        <li>Our phone number: 0043586534422</li>
+        <li>Our address: 22 Microverse st., 84503 Universe</li>
+      </ul>
+    `;
+contact.appendChild(contactDiv);
+
+listLink.addEventListener('click', () => {
+  booksList.classList.remove('hide');
+  contact.classList.add('hide');
+  newSection.classList.add('hide');
+});
+
+addNewLink.addEventListener('click', () => {
+  booksList.classList.add('hide');
+  contact.classList.add('hide');
+  newSection.classList.remove('hide');
+});
+
+contactLink.addEventListener('click', () => {
+  booksList.classList.add('hide');
+  contact.classList.remove('hide');
+  newSection.classList.add('hide');
+});
+
+function activeLink() {
+  link.forEach((item) => item.classList.remove('active'));
+  this.classList.add('active');
+}
+
+link.forEach((item) => item.addEventListener('click', activeLink));
+
+const currentDate = new Date();
+const date = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1)}-${currentDate.getDate()}`;
+const time = `${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
+const dateCurrentTime = `${date}, ${time}`;
+dateTime.innerHTML = dateCurrentTime;

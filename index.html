@@ -13,20 +13,43 @@
 </head>
 
 <body>
-    <main class="container">
-        <h1>All awesome books</h1>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">Awesome Books</div>
+            <ul class="navigation">
+                <li class="nav-link list-link"><a class="link active" href="#lists">List</a></li>
+                <li class="nav-link add-new-link"><a class="link" href="#newbook">Add New</a></li>
+                <li class="nav-link contact-link"><a class="link" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="date"><p id="current-date"></p></div>
+    </header>
 
-        <div class="added-books"></div>
-        <hr>
-        <form class="input-section" action="#">
-            <h2>Add a new book</h2>
-            <input type="text" name="title" class="pb" id="title" placeholder="Title" required minlength="1">
-            <input type="text" name="author" class="pb" id="author" placeholder="Author" required minlength="1">
-            <div class="btn-container">
-                <button type="submit" class="add-btn">Add</button>
-            </div>
-        </form>
+    <main class="container">
+        <section class="book-list" id="lists">
+            <h1>All awesome books</h1>
+
+            <div class="added-books"></div>
+        </section>
+
+        <section class="add-new hide" id="newbook">
+            <form class="input-section" action="#">
+                <h2>Add a new book</h2>
+                <input type="text" name="title" class="pb" id="title" placeholder="Title" required minlength="1">
+                <input type="text" name="author" class="pb" id="author" placeholder="Author" required minlength="1">
+                <div class="btn-container">
+                    <button type="submit" class="add-btn">Add</button>
+                </div>
+            </form>
+        </section>
+        <section class="contact hide" id="contact">
+            <h2 class="hidden">Contact section</h2>
+        </section>
+
     </main>
+    <footer class="footer">
+        <p>&copy; 2022 Awesomebooks.com</p>
+    </footer>
 
     <script src="./script.js"></script>
 </body>
