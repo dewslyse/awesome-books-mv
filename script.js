@@ -91,9 +91,8 @@ window.addEventListener('load', () => {
   }
 });
 
-contactLink.addEventListener('click', () => {
-  const contactDiv = document.createElement('div');
-  contactDiv.innerHTML = `
+const contactDiv = document.createElement('div');
+contactDiv.innerHTML = `
       <h2>Contact Information</h2>
       <div class="contact-text">
       <p>Do you have any questions or you just want to say 'Hello".</p>
@@ -105,11 +104,10 @@ contactLink.addEventListener('click', () => {
         <li>Our address: 22 Microverse st., 84503 Universe</li>
       </ul>
     `;
-  contact.appendChild(contactDiv);
-});
+contact.appendChild(contactDiv);
 
 listLink.addEventListener('click', () => {
-  booksList.classList.add('show');
+  booksList.classList.remove('hide');
   contact.classList.add('hide');
   newSection.classList.add('hide');
 });
@@ -117,11 +115,11 @@ listLink.addEventListener('click', () => {
 addNewLink.addEventListener('click', () => {
   booksList.classList.add('hide');
   contact.classList.add('hide');
-  newSection.classList.add('show');
+  newSection.classList.remove('hide');
 });
 
 contactLink.addEventListener('click', () => {
   booksList.classList.add('hide');
-  contact.classList.add('show');
+  contact.classList.remove('hide');
   newSection.classList.add('hide');
 });
