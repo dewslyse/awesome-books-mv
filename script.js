@@ -1,6 +1,8 @@
 /* eslint-disable max-classes-per-file */
 const addBtn = document.querySelector('.add-btn');
 const div = document.querySelector('.added-books');
+const contact = document.querySelector('.contact');
+const contactLink = document.querySelector('.contact-link');
 class Library {
   static library = [];
 
@@ -82,4 +84,21 @@ window.addEventListener('load', () => {
       display(storage[j]);
     }
   }
+});
+
+contactLink.addEventListener('click', () => {
+  const contactDiv = document.createElement('div');
+  contactDiv.innerHTML = `
+      <h2>Contact Information</h2>
+      <div class="contact-text">
+      <p>Do you have any questions or you just want to say 'Hello".</p>
+      <p>You can reach out to us!</p>
+      </div>
+      <ul class="contact-features">
+        <li>Our email: info@awesomebooks.com</li>
+        <li>Our phone number: 0043586534422</li>
+        <li>Our address: 22 Microverse st., 84503 Universe</li>
+      </ul>
+    `;
+  contact.appendChild(contactDiv);
 });

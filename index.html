@@ -13,20 +13,39 @@
 </head>
 
 <body>
+    <header class="header">
+        <nav class="nav-bar">
+            <div>Awesome Books</div>
+            <ul class="navigation">
+                <li class="nav-link"><a href="#">List</a></li>
+                <li class="nav-link"><a href="#">Add New</a></li>
+                <li class="nav-link contact-link"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="date"></div>
+    </header>
     <main class="container">
-        <h1>All awesome books</h1>
+        <section class="book-list">
+            <h1>All awesome books</h1>
 
-        <div class="added-books"></div>
-        <hr>
-        <form class="input-section" action="#">
-            <h2>Add a new book</h2>
-            <input type="text" name="title" class="pb" id="title" placeholder="Title" required minlength="1">
-            <input type="text" name="author" class="pb" id="author" placeholder="Author" required minlength="1">
-            <div class="btn-container">
-                <button type="submit" class="add-btn">Add</button>
-            </div>
-        </form>
+            <div class="added-books"></div>
+        </section>
+        <section class="add-new">
+            <form class="input-section" action="#">
+                <h2>Add a new book</h2>
+                <input type="text" name="title" class="pb" id="title" placeholder="Title" required minlength="1">
+                <input type="text" name="author" class="pb" id="author" placeholder="Author" required minlength="1">
+                <div class="btn-container">
+                    <button type="submit" class="add-btn">Add</button>
+                </div>
+            </form>
+        </section>
+        <section class="contact"></section>
+        
     </main>
+    <footer class="footer">
+        <p>&copy; 2022 Awesomebooks.com</p>
+    </footer>
 
     <script src="./script.js"></script>
 </body>
