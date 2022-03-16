@@ -7,6 +7,7 @@ const listLink = document.querySelector('.list-link');
 const addNewLink = document.querySelector('.add-new-link');
 const booksList = document.querySelector('.book-list');
 const newSection = document.querySelector('.add-new');
+const link = document.querySelectorAll('.link');
 
 class Library {
   static library = [];
@@ -92,6 +93,7 @@ window.addEventListener('load', () => {
 });
 
 const contactDiv = document.createElement('div');
+contactDiv.classList.add('contact-container');
 contactDiv.innerHTML = `
       <h2>Contact Information</h2>
       <div class="contact-text">
@@ -110,6 +112,7 @@ listLink.addEventListener('click', () => {
   booksList.classList.remove('hide');
   contact.classList.add('hide');
   newSection.classList.add('hide');
+  // listLink.innerText.style.color = 'blue';
 });
 
 addNewLink.addEventListener('click', () => {
@@ -123,3 +126,16 @@ contactLink.addEventListener('click', () => {
   contact.classList.remove('hide');
   newSection.classList.add('hide');
 });
+
+// function activeLink() {
+//   link.forEach((link) => {
+//     link.classList.toggle('link--active');
+//     // link.classList.remove('link--active');
+//   });
+// }
+
+// link.forEach((link) => {
+//   link.addEventListener('click', () => {
+//     link.style.color = 'blue';
+//   });
+// });

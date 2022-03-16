@@ -11,10 +11,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-// .container {
-//   width: 70%;
-//   margin: 60px auto;
-// }
 .logo {
   font-weight: bold;
   padding-left: 10px;
@@ -121,12 +117,13 @@ ul {
   display: flex;
   list-style: none;
 
-  a {
+  .link {
     text-decoration: none;
     color: #000;
   }
 
-  a:hover {
+  .link:hover,
+  .link--active {
     color: blue;
   }
 }
@@ -143,20 +140,22 @@ ul {
 }
 
 #contact {
-  // display: flex;
-  // justify-content: center;
   margin: 0 auto;
   max-width: 90%;
 }
 
-.contact-text {
+.contact-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.contact-text {
   margin: 30px auto;
 }
 
 .contact-features {
-  margin: 40px 30px;
+  margin: 0 70px;
 }
 
 .footer {
