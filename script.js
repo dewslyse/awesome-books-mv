@@ -112,7 +112,6 @@ listLink.addEventListener('click', () => {
   booksList.classList.remove('hide');
   contact.classList.add('hide');
   newSection.classList.add('hide');
-  // listLink.innerText.style.color = 'blue';
 });
 
 addNewLink.addEventListener('click', () => {
@@ -127,15 +126,9 @@ contactLink.addEventListener('click', () => {
   newSection.classList.add('hide');
 });
 
-// function activeLink() {
-//   link.forEach((link) => {
-//     link.classList.toggle('link--active');
-//     // link.classList.remove('link--active');
-//   });
-// }
+function activeLink() {
+  link.forEach((item) => item.classList.remove('active'));
+  this.classList.add('active');
+}
 
-// link.forEach((link) => {
-//   link.addEventListener('click', () => {
-//     link.style.color = 'blue';
-//   });
-// });
+link.forEach((item) => item.addEventListener('click', activeLink));

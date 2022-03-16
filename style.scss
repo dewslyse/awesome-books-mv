@@ -124,7 +124,7 @@ ul {
   }
 
   .link:hover,
-  .link--active {
+  .active {
     color: blue;
   }
 }
@@ -138,6 +138,17 @@ ul {
   border-right: 1px solid #000;
   padding: 0 20px;
   margin: 0 20px;
+}
+
+.hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
 }
 
 #contact {
