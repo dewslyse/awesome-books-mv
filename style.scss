@@ -108,7 +108,7 @@ ul {
   display: flex;
   justify-content: space-between;
   max-width: 90%;
-  margin: 20px auto;
+  margin: 10px auto 20px;
   padding: 5px;
   border: 2px solid #000;
 }
@@ -120,6 +120,7 @@ ul {
   .link {
     text-decoration: none;
     color: #000;
+    font-weight: 500;
   }
 
   .link:hover,
@@ -141,7 +142,8 @@ ul {
 
 #contact {
   margin: 0 auto;
-  max-width: 90%;
+  max-width: 70%;
+  padding-bottom: 50px;
 }
 
 .contact-container {
@@ -160,7 +162,12 @@ ul {
 
 .footer {
   max-width: 90%;
-  margin: 20px auto;
   padding: 5px 5px 5px 15px;
   border: 2px solid #000;
+  width: 100%;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #fff;
 }
