@@ -16,6 +16,11 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.logo {
+  font-weight: bold;
+  padding-left: 10px;
+}
+
 h1 {
   text-align: center;
   margin: 0 0 12px;
@@ -154,6 +159,10 @@ ul {
   color: blue;
 }
 
+.contact-link {
+  margin-right: 10px;
+}
+
 .add-new-link {
   border-left: 1px solid #000;
   border-right: 1px solid #000;
@@ -161,17 +170,20 @@ ul {
   margin: 0 20px;
 }
 
-.contact {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+#contact {
+  margin: 0 auto;
+  max-width: 90%;
 }
 
 .contact-text {
-  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px auto;
 }
 
 .contact-features {
@@ -181,6 +193,6 @@ ul {
 .footer {
   max-width: 90%;
   margin: 20px auto;
-  padding: 5px;
+  padding: 5px 5px 5px 15px;
   border: 2px solid #000;
 }
