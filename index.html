@@ -17,20 +17,22 @@
         <nav class="nav-bar">
             <div>Awesome Books</div>
             <ul class="navigation">
-                <li class="nav-link"><a href="#">List</a></li>
-                <li class="nav-link"><a href="#">Add New</a></li>
-                <li class="nav-link contact-link"><a href="#">Contact</a></li>
+                <li class="nav-link list-link"><a href="#lists">List</a></li>
+                <li class="nav-link add-new-link"><a href="#newbook">Add New</a></li>
+                <li class="nav-link contact-link"><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <div class="date"></div>
     </header>
+
     <main class="container">
-        <section class="book-list">
+        <section class="book-list" id="lists">
             <h1>All awesome books</h1>
 
             <div class="added-books"></div>
         </section>
-        <section class="add-new">
+
+        <section class="add-new" id="newbook">
             <form class="input-section" action="#">
                 <h2>Add a new book</h2>
                 <input type="text" name="title" class="pb" id="title" placeholder="Title" required minlength="1">
@@ -40,8 +42,8 @@
                 </div>
             </form>
         </section>
-        <section class="contact"></section>
-        
+        <section class="contact" id="contact"></section>
+
     </main>
     <footer class="footer">
         <p>&copy; 2022 Awesomebooks.com</p>
