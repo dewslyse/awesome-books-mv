@@ -3,6 +3,11 @@ const addBtn = document.querySelector('.add-btn');
 const div = document.querySelector('.added-books');
 const contact = document.querySelector('.contact');
 const contactLink = document.querySelector('.contact-link');
+const listLink = document.querySelector('.list-link');
+const addNewLink = document.querySelector('.add-new-link');
+const booksList = document.querySelector('.book-list');
+const newSection = document.querySelector('.add-new');
+
 class Library {
   static library = [];
 
@@ -101,4 +106,22 @@ contactLink.addEventListener('click', () => {
       </ul>
     `;
   contact.appendChild(contactDiv);
+});
+
+listLink.addEventListener('click', () => {
+  booksList.classList.add('show');
+  contact.classList.add('hide');
+  newSection.classList.add('hide');
+});
+
+addNewLink.addEventListener('click', () => {
+  booksList.classList.add('hide');
+  contact.classList.add('hide');
+  newSection.classList.add('show');
+});
+
+contactLink.addEventListener('click', () => {
+  booksList.classList.add('hide');
+  contact.classList.add('show');
+  newSection.classList.add('hide');
 });
