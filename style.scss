@@ -11,97 +11,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+//Header
 .logo {
   font-weight: bold;
   padding-left: 10px;
-}
-
-h1 {
-  text-align: center;
-  margin: 0 0 12px;
-}
-
-h2 {
-  text-align: center;
-  color: black;
-  font-weight: 500;
-  margin-bottom: 12px;
-}
-
-.added-books {
-  border: 2px solid black;
-  margin: auto;
-  max-width: 90%;
-}
-
-.book:nth-child(odd) {
-  background-color: #e0e0e2;
-}
-
-hr {
-  margin: 16px auto 0;
-  background-color: black;
-  height: 2px;
-  border: 0;
-  width: 100px;
-}
-
-.input-section {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  margin: 20px auto;
-}
-
-input {
-  border: 1px solid black;
-  padding: 3px;
-}
-
-.pb {
-  margin-bottom: 15px;
-}
-
-.btn-container {
-  display: flex;
-  justify-content: end;
-}
-
-.add-btn {
-  width: fit-content;
-  align-content: flex-end;
-  border: 1px solid black;
-  padding: 4px 8px;
-}
-
-ul {
-  padding-inline-start: 0;
-}
-
-.item {
-  list-style: none;
-  padding-left: 10px;
-}
-
-.remove-button {
-  margin: 0 10px 0;
-  padding: 4px 8px;
-  border: 1px solid red;
-}
-
-.book-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 40px;
-}
-
-.hide {
-  display: none;
-}
-
-.show {
-  display: block;
 }
 
 .nav-bar {
@@ -140,20 +53,89 @@ ul {
   margin: 0 20px;
 }
 
-.hidden {
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
+.date {
+  text-align: right;
+  max-width: 90%;
+  margin: 0 auto 50px;
 }
 
+//Book list section
+h1 {
+  text-align: center;
+  margin: 0 0 12px;
+}
+
+.added-books {
+  border: 2px solid black;
+  margin: auto;
+  max-width: 90%;
+}
+
+.item {
+  padding-left: 10px;
+}
+
+.book {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+
+  &:nth-child(odd) {
+    background-color: #e0e0e2;
+  }
+}
+
+.added-title {
+  font-weight: 700;
+}
+
+.remove-btn {
+  margin: 0 10px 0;
+  padding: 4px 8px;
+  border: 1px solid red;
+}
+
+h2 {
+  text-align: center;
+  color: black;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+//Input Section
+.input-section {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 20px auto;
+}
+
+input {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+.pb {
+  margin-bottom: 15px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: end;
+}
+
+.add-btn {
+  width: fit-content;
+  align-content: flex-end;
+  border: 1px solid black;
+  padding: 4px 8px;
+}
+
+//Contact Section
 #contact {
   margin: 0 auto;
-  max-width: 70%;
+  max-width: 80%;
   padding-bottom: 50px;
 }
 
@@ -171,6 +153,7 @@ ul {
   margin: 0 70px;
 }
 
+//Footer section
 .footer {
   max-width: 90%;
   padding: 5px 5px 5px 15px;
@@ -183,8 +166,22 @@ ul {
   background-color: #fff;
 }
 
-.date {
-  text-align: right;
-  max-width: 90%;
-  margin: 0 auto 20px;
+//Extras
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
 }
