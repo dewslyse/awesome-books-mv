@@ -45,7 +45,6 @@ class Library {
                 books.splice(index, 1);
             }
         });
-
         localStorage.setItem('books', JSON.stringify(books));
     }
 }
@@ -119,8 +118,6 @@ addBtn.addEventListener('click', (e) => {
 //Delete added book 
 addedBooks.addEventListener('click', (e) => {
     Actions.deleteBook(e.target);
-
-    // console.log(e.target.previousElementSibling.textContent);
 });
 
 
